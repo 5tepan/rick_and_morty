@@ -9,6 +9,7 @@ class PaginatedState<T> {
     this.isRefreshing = false,
     this.isLoadingMore = false,
     this.isAllLoaded = false,
+    this.isRefreshError = false,
     this.errorCode,
     this.serverMessage,
   });
@@ -18,6 +19,7 @@ class PaginatedState<T> {
   final bool isRefreshing;
   final bool isLoadingMore;
   final bool isAllLoaded;
+  final bool isRefreshError;
   final AppErrorCode? errorCode;
   final String? serverMessage;
 
@@ -32,6 +34,7 @@ class PaginatedState<T> {
     bool? isRefreshing,
     bool? isLoadingMore,
     bool? isAllLoaded,
+    bool? isRefreshError,
     AppErrorCode? errorCode,
     String? serverMessage,
     bool clearError = false,
@@ -42,6 +45,9 @@ class PaginatedState<T> {
       isRefreshing: isRefreshing ?? this.isRefreshing,
       isLoadingMore: isLoadingMore ?? this.isLoadingMore,
       isAllLoaded: isAllLoaded ?? this.isAllLoaded,
+      isRefreshError: clearError
+          ? false
+          : (isRefreshError ?? this.isRefreshError),
       errorCode: clearError ? null : (errorCode ?? this.errorCode),
       serverMessage: clearError ? null : (serverMessage ?? this.serverMessage),
     );

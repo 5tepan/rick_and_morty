@@ -20,19 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
-  static String m0(userName) => "${userName} печатает...";
+  static String m0(path) => "Сохранено: ${path}";
 
-  static String m1(phone) =>
-      "На телефон ${phone} отправлено\nСМС с кодом подтверждения";
-
-  static String m2(path) => "Сохранено: ${path}";
-
-  static String m3(current, total) => "${current} / ${total}";
-
-  static String m4(buttonText) =>
-      "Нажимая на кнопку «${buttonText}», Вы\n соглашаетесь с ";
-
-  static String m5(time) => "Повторная отправка через ${time}";
+  static String m1(current, total) => "${current} / ${total}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -69,30 +59,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "apiUnknownError": MessageLookupByLibrary.simpleMessage(
       "Неизвестная ошибка. Попробуйте позже",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Base Flutter"),
-    "authConfirmCodeError": MessageLookupByLibrary.simpleMessage(
-      "Не удалось подтвердить код. Попробуйте позже",
-    ),
     "authInvalidConfirmationCode": MessageLookupByLibrary.simpleMessage(
       "Неверный код подтверждения",
     ),
     "authPhoneRequired": MessageLookupByLibrary.simpleMessage(
       "Укажите номер телефона",
     ),
-    "authPhoneTitle": MessageLookupByLibrary.simpleMessage(
-      "Введите номер телефона,\nчтобы получить код подтверждения",
-    ),
     "authRefreshSessionFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось обновить сессию",
     ),
-    "authResendCodeError": MessageLookupByLibrary.simpleMessage(
-      "Не удалось отправить код повторно",
-    ),
     "authResendCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось отправить код повторно",
-    ),
-    "authSendCodeError": MessageLookupByLibrary.simpleMessage(
-      "Не удалось отправить код. Попробуйте позже",
     ),
     "authSendCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось отправить код",
@@ -103,117 +80,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "authVerifyCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось подтвердить код",
     ),
-    "chatEmptySubtitle": MessageLookupByLibrary.simpleMessage(
-      "Напишите первое сообщение",
+    "characterStatusAlive": MessageLookupByLibrary.simpleMessage("Жив"),
+    "characterStatusDead": MessageLookupByLibrary.simpleMessage("Мёртв"),
+    "characterStatusUnknown": MessageLookupByLibrary.simpleMessage(
+      "Неизвестно",
     ),
-    "chatEmptyTitle": MessageLookupByLibrary.simpleMessage("Нет сообщений"),
-    "chatListEmptySubtitle": MessageLookupByLibrary.simpleMessage(
-      "Здесь появятся ваши переписки",
+    "charactersEmpty": MessageLookupByLibrary.simpleMessage(
+      "Персонажи не найдены",
     ),
-    "chatListEmptyTitle": MessageLookupByLibrary.simpleMessage("Нет чатов"),
-    "chatListTitle": MessageLookupByLibrary.simpleMessage("Чаты"),
-    "chatMessageInputHint": MessageLookupByLibrary.simpleMessage("Сообщение"),
+    "charactersTitle": MessageLookupByLibrary.simpleMessage("Персонажи"),
     "chatSendMessageFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось отправить сообщение",
     ),
-    "chatTypingMultiple": MessageLookupByLibrary.simpleMessage("Печатают..."),
-    "chatTypingSingle": m0,
-    "codeSentToPhone": m1,
-    "confirmationCodeLabel": MessageLookupByLibrary.simpleMessage(
-      "Код подтверждения",
-    ),
-    "continueButton": MessageLookupByLibrary.simpleMessage("Продолжить"),
     "dateTimeSelect": MessageLookupByLibrary.simpleMessage("Выбрать"),
     "dateTimeSelectTime": MessageLookupByLibrary.simpleMessage(
       "Выберите время",
     ),
     "dateTimeSelectYear": MessageLookupByLibrary.simpleMessage("Выберите год"),
-    "demoAttachmentsLabel": MessageLookupByLibrary.simpleMessage("Вложения"),
-    "demoCalendarListMode": MessageLookupByLibrary.simpleMessage(
-      "Список месяцев",
-    ),
-    "demoCalendarPageMode": MessageLookupByLibrary.simpleMessage("PageView"),
-    "demoCalendarSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Свайп между месяцами, выбор диапазона дат. Переключите режим в меню AppBar.",
-    ),
-    "demoCalendarTitle": MessageLookupByLibrary.simpleMessage("Календарь"),
-    "demoFilesSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "PDF, документы и другие типы через file_picker.",
-    ),
-    "demoFilesSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Загрузка файлов",
-    ),
-    "demoMapClusterSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Группировка маркеров при отдалении",
-    ),
-    "demoMapClusterTitle": MessageLookupByLibrary.simpleMessage("Кластеры"),
-    "demoMapFullscreenSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Zoom, my location, compass, traffic, auto-locate",
-    ),
-    "demoMapFullscreenTitle": MessageLookupByLibrary.simpleMessage(
-      "Полноэкранная карта",
-    ),
-    "demoMapPickSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Тап по карте → подтверждение",
-    ),
-    "demoMapPickTitle": MessageLookupByLibrary.simpleMessage("Выбор точки"),
-    "demoMapPolylineSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Линия по списку точек (без Directions API)",
-    ),
-    "demoMapPolylineTitle": MessageLookupByLibrary.simpleMessage("Полилиния"),
-    "demoMapPreviewTitle": MessageLookupByLibrary.simpleMessage("Превью"),
-    "demoMapSnapshotSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Screenshot MapKit → шаринг PNG",
-    ),
-    "demoMapSnapshotTitle": MessageLookupByLibrary.simpleMessage(
-      "Снимок карты",
-    ),
-    "demoMapSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Yandex MapKit Lite: preview, fullscreen, геолокация, cluster, polyline, snapshot. Поиск/геокодер не входят в модуль.",
-    ),
-    "demoMapTitle": MessageLookupByLibrary.simpleMessage("Карта"),
-    "demoMediaFilesTitle": MessageLookupByLibrary.simpleMessage(
-      "Медиа и файлы",
-    ),
-    "demoMixedSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Смешанная лента. С камеры — выбор фото или видео, из галереи — любой тип.",
-    ),
-    "demoMixedSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Фото и видео (mixed)",
-    ),
-    "demoPhotoSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Только изображения. При добавлении открывается croppy для обрезки.",
-    ),
-    "demoPhotoSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Фото (редактируемая лента)",
-    ),
-    "demoReadOnlySectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Те же элементы, что в mixed-ленте, но без кнопок добавления и удаления.",
-    ),
-    "demoReadOnlySectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Только просмотр",
-    ),
-    "demoShareFilesButton": MessageLookupByLibrary.simpleMessage(
-      "Поделиться файлами",
-    ),
-    "demoShareLinkText": MessageLookupByLibrary.simpleMessage(
-      "Демо ссылка из приложения",
-    ),
-    "demoShareSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "share_plus — ссылка, текст и выбранные файлы.",
-    ),
-    "demoShareSectionTitle": MessageLookupByLibrary.simpleMessage("Шаринг"),
-    "demoShareTextButton": MessageLookupByLibrary.simpleMessage(
-      "Поделиться текстом",
-    ),
-    "demoSyncMixedButton": MessageLookupByLibrary.simpleMessage(
-      "Скопировать mixed-ленту в режим просмотра",
-    ),
-    "documentDefaultTitle": MessageLookupByLibrary.simpleMessage("Документ"),
     "enterCode": MessageLookupByLibrary.simpleMessage("Введите код"),
-    "enterPhone": MessageLookupByLibrary.simpleMessage(
-      "Введите номер телефона",
-    ),
     "errorLoadingText": MessageLookupByLibrary.simpleMessage(
       "Данные не были загружены, пожалуйста, попробуйте еще раз",
     ),
@@ -230,21 +114,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "fileViewerLocalUnavailable": MessageLookupByLibrary.simpleMessage(
       "Локальный файл недоступен",
     ),
-    "fileViewerMediaTitle": MessageLookupByLibrary.simpleMessage("Медиа"),
     "fileViewerPreviewUnavailable": MessageLookupByLibrary.simpleMessage(
       "Предпросмотр недоступен",
     ),
     "fileViewerSaveFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось сохранить файл",
     ),
-    "fileViewerSaved": m2,
-    "fileViewerTitle": MessageLookupByLibrary.simpleMessage("Файл"),
+    "fileViewerSaved": m0,
     "inDevelopment": MessageLookupByLibrary.simpleMessage("В разработке"),
     "mediaFeedAddTitle": MessageLookupByLibrary.simpleMessage("Добавить медиа"),
     "mediaFeedCamera": MessageLookupByLibrary.simpleMessage("Камера"),
     "mediaFeedGallery": MessageLookupByLibrary.simpleMessage("Галерея"),
     "mediaFeedGalleryClose": MessageLookupByLibrary.simpleMessage("Закрыть"),
-    "mediaFeedGalleryCounter": m3,
+    "mediaFeedGalleryCounter": m1,
     "mediaFeedPhoto": MessageLookupByLibrary.simpleMessage("Фото"),
     "mediaFeedVideo": MessageLookupByLibrary.simpleMessage("Видео"),
     "navHome": MessageLookupByLibrary.simpleMessage("Главная"),
@@ -256,67 +138,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneInvalid": MessageLookupByLibrary.simpleMessage(
       "Введите корректный номер телефона",
     ),
-    "phoneLabel": MessageLookupByLibrary.simpleMessage("Телефон"),
-    "privacyAgreementAnd": MessageLookupByLibrary.simpleMessage("\nи c "),
-    "privacyAgreementPrefix": m4,
-    "privacyPolicy": MessageLookupByLibrary.simpleMessage(
-      "Политикой конфиденциальности",
-    ),
-    "privacyPolicyTitle": MessageLookupByLibrary.simpleMessage(
-      "Политика конфиденциальности",
-    ),
-    "profileCalendarDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Кастомный календарь: диапазон дат, маркеры, list/page",
-    ),
-    "profileCalendarDemoTitle": MessageLookupByLibrary.simpleMessage(
-      "Календарь",
-    ),
-    "profileChatDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Список комнат, сообщения, WebSocket в реальном времени",
-    ),
-    "profileChatDemoTitle": MessageLookupByLibrary.simpleMessage("Чаты"),
-    "profileChatDirectDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Прямой вход в единственный чат без списка комнат",
-    ),
-    "profileChatDirectDemoTitle": MessageLookupByLibrary.simpleMessage("Чат"),
-    "profileDemoSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Примеры виджетов из core/components",
-    ),
-    "profileDemoSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Демо компонентов",
-    ),
-    "profileMapDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Yandex MapKit: preview, fullscreen, pick, cluster, polyline",
-    ),
-    "profileMapDemoTitle": MessageLookupByLibrary.simpleMessage("Карта"),
-    "profileMediaDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Лента фото/видео, загрузка файлов, просмотр, шаринг",
-    ),
-    "profileMediaDemoTitle": MessageLookupByLibrary.simpleMessage(
-      "Медиа и файлы",
-    ),
-    "resendCodeButton": MessageLookupByLibrary.simpleMessage(
-      "Отправить код повторно",
-    ),
-    "resendCodeIn": m5,
     "shareButton": MessageLookupByLibrary.simpleMessage("Поделиться"),
     "shareLinkButton": MessageLookupByLibrary.simpleMessage(
       "Поделиться ссылкой",
-    ),
-    "shopEmptySubtitle": MessageLookupByLibrary.simpleMessage(
-      "Товары появятся здесь",
-    ),
-    "shopEmptyTitle": MessageLookupByLibrary.simpleMessage("Пока пусто"),
-    "shopLayoutGrid": MessageLookupByLibrary.simpleMessage("Сетка"),
-    "shopLayoutList": MessageLookupByLibrary.simpleMessage("Список"),
-    "shopProductDescription": MessageLookupByLibrary.simpleMessage("Описание"),
-    "shopProductDetailTitle": MessageLookupByLibrary.simpleMessage("Товар"),
-    "shopTitle": MessageLookupByLibrary.simpleMessage("Магазин"),
-    "termsOfUse": MessageLookupByLibrary.simpleMessage(
-      "Условиями использования",
-    ),
-    "termsOfUseTitle": MessageLookupByLibrary.simpleMessage(
-      "Условия использования",
     ),
     "tryAgain": MessageLookupByLibrary.simpleMessage("Попробовать снова"),
     "universalModalNo": MessageLookupByLibrary.simpleMessage("Нет"),
@@ -344,9 +168,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validationSurname": MessageLookupByLibrary.simpleMessage(
       "Введите фамилию",
-    ),
-    "webViewNoUrl": MessageLookupByLibrary.simpleMessage(
-      "Ссылка для отображения не передана",
     ),
   };
 }

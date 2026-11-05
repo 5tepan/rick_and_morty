@@ -3,6 +3,13 @@ import 'package:base_flutter_proj/core/errors/error_mapper.dart';
 import 'package:base_flutter_proj/core/helpers/async_executor.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+class PaginatedPage<T> {
+  const PaginatedPage({required this.items, required this.hasNext});
+
+  final List<T> items;
+  final bool hasNext;
+}
+
 /// Стандартный паттерн пагинации в проекте.
 /// Наследуйте для списков с подгрузкой страниц.
 abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
@@ -15,12 +22,12 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
     return PaginatedState<T>();
   }
 
-  int get pageSize => 20;
+  int get firstPage => 1;
 
-  int _page = 0;
+  int _page = 1;
   bool _requestInProgress = false;
 
-  Future<List<T>> loadPage(int page);
+  Future<PaginatedPage<T>> loadPage(int page);
 
   Future<void> loadInitial() async {
     if (_requestInProgress) return;
@@ -35,14 +42,14 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
     );
 
     try {
-      _page = 0;
-      final items = await loadPage(_page);
+      final page = await loadPage(firstPage);
       if (!_executor.isCurrentGeneration(generation)) return;
 
+      _page = firstPage;
       state = state.copyWith(
-        items: items,
+        items: page.items,
         isLoading: false,
-        isAllLoaded: items.length < pageSize,
+        isAllLoaded: !page.hasNext,
       );
     } catch (error) {
       if (!_executor.isCurrentGeneration(generation)) return;
@@ -67,20 +74,21 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
     state = state.copyWith(isRefreshing: true, clearError: true);
 
     try {
-      _page = 0;
-      final items = await loadPage(_page);
+      final page = await loadPage(firstPage);
       if (!_executor.isCurrentGeneration(generation)) return;
 
+      _page = firstPage;
       state = state.copyWith(
-        items: items,
+        items: page.items,
         isRefreshing: false,
-        isAllLoaded: items.length < pageSize,
+        isAllLoaded: !page.hasNext,
       );
     } catch (error) {
       if (!_executor.isCurrentGeneration(generation)) return;
       final mapped = ErrorMapper.from(error);
       state = state.copyWith(
         isRefreshing: false,
+        isRefreshError: true,
         errorCode: mapped.code,
         serverMessage: mapped.serverMessage,
       );
@@ -94,6 +102,7 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
   Future<void> loadMore() async {
     if (_requestInProgress ||
         state.isAllLoaded ||
+        state.hasError ||
         (state.items.isEmpty && state.isLoading)) {
       return;
     }
@@ -104,15 +113,15 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
 
     try {
       final nextPage = _page + 1;
-      final nextItems = await loadPage(nextPage);
+      final page = await loadPage(nextPage);
       if (!_executor.isCurrentGeneration(generation)) return;
 
       _page = nextPage;
 
       state = state.copyWith(
-        items: [...state.items, ...nextItems],
+        items: [...state.items, ...page.items],
         isLoadingMore: false,
-        isAllLoaded: nextItems.length < pageSize,
+        isAllLoaded: !page.hasNext,
       );
     } catch (error) {
       if (!_executor.isCurrentGeneration(generation)) return;
@@ -127,6 +136,11 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
         _requestInProgress = false;
       }
     }
+  }
+
+  Future<void> retryLoadMore() async {
+    clearError();
+    await loadMore();
   }
 
   void clearError() {

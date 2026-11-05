@@ -54,76 +54,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Base Flutter`
-  String get appTitle {
-    return Intl.message('Base Flutter', name: 'appTitle', desc: '', args: []);
-  }
-
-  /// `Продолжить`
-  String get continueButton {
-    return Intl.message(
-      'Продолжить',
-      name: 'continueButton',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Введите номер телефона,\nчтобы получить код подтверждения`
-  String get authPhoneTitle {
-    return Intl.message(
-      'Введите номер телефона,\nчтобы получить код подтверждения',
-      name: 'authPhoneTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Телефон`
-  String get phoneLabel {
-    return Intl.message('Телефон', name: 'phoneLabel', desc: '', args: []);
-  }
-
-  /// `Код подтверждения`
-  String get confirmationCodeLabel {
-    return Intl.message(
-      'Код подтверждения',
-      name: 'confirmationCodeLabel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `На телефон {phone} отправлено\nСМС с кодом подтверждения`
-  String codeSentToPhone(String phone) {
-    return Intl.message(
-      'На телефон $phone отправлено\nСМС с кодом подтверждения',
-      name: 'codeSentToPhone',
-      desc: '',
-      args: [phone],
-    );
-  }
-
-  /// `Повторная отправка через {time}`
-  String resendCodeIn(String time) {
-    return Intl.message(
-      'Повторная отправка через $time',
-      name: 'resendCodeIn',
-      desc: '',
-      args: [time],
-    );
-  }
-
-  /// `Отправить код повторно`
-  String get resendCodeButton {
-    return Intl.message(
-      'Отправить код повторно',
-      name: 'resendCodeButton',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Вы не в сети. Проверьте подключение к Интернету.`
   String get noInternet {
     return Intl.message(
@@ -139,86 +69,6 @@ class S {
     return Intl.message(
       'В разработке',
       name: 'inDevelopment',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Нажимая на кнопку «{buttonText}», Вы\n соглашаетесь с `
-  String privacyAgreementPrefix(String buttonText) {
-    return Intl.message(
-      'Нажимая на кнопку «$buttonText», Вы\n соглашаетесь с ',
-      name: 'privacyAgreementPrefix',
-      desc: '',
-      args: [buttonText],
-    );
-  }
-
-  /// `Политикой конфиденциальности`
-  String get privacyPolicy {
-    return Intl.message(
-      'Политикой конфиденциальности',
-      name: 'privacyPolicy',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `\nи c `
-  String get privacyAgreementAnd {
-    return Intl.message(
-      '\nи c ',
-      name: 'privacyAgreementAnd',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Условиями использования`
-  String get termsOfUse {
-    return Intl.message(
-      'Условиями использования',
-      name: 'termsOfUse',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Условия использования`
-  String get termsOfUseTitle {
-    return Intl.message(
-      'Условия использования',
-      name: 'termsOfUseTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Политика конфиденциальности`
-  String get privacyPolicyTitle {
-    return Intl.message(
-      'Политика конфиденциальности',
-      name: 'privacyPolicyTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Документ`
-  String get documentDefaultTitle {
-    return Intl.message(
-      'Документ',
-      name: 'documentDefaultTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Ссылка для отображения не передана`
-  String get webViewNoUrl {
-    return Intl.message(
-      'Ссылка для отображения не передана',
-      name: 'webViewNoUrl',
       desc: '',
       args: [],
     );
@@ -259,51 +109,11 @@ class S {
     return Intl.message('Введите код', name: 'enterCode', desc: '', args: []);
   }
 
-  /// `Введите номер телефона`
-  String get enterPhone {
-    return Intl.message(
-      'Введите номер телефона',
-      name: 'enterPhone',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Введите корректный номер телефона`
   String get phoneInvalid {
     return Intl.message(
       'Введите корректный номер телефона',
       name: 'phoneInvalid',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Не удалось отправить код. Попробуйте позже`
-  String get authSendCodeError {
-    return Intl.message(
-      'Не удалось отправить код. Попробуйте позже',
-      name: 'authSendCodeError',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Не удалось подтвердить код. Попробуйте позже`
-  String get authConfirmCodeError {
-    return Intl.message(
-      'Не удалось подтвердить код. Попробуйте позже',
-      name: 'authConfirmCodeError',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Не удалось отправить код повторно`
-  String get authResendCodeError {
-    return Intl.message(
-      'Не удалось отправить код повторно',
-      name: 'authResendCodeError',
       desc: '',
       args: [],
     );
@@ -579,61 +389,6 @@ class S {
     );
   }
 
-  /// `Магазин`
-  String get shopTitle {
-    return Intl.message('Магазин', name: 'shopTitle', desc: '', args: []);
-  }
-
-  /// `Пока пусто`
-  String get shopEmptyTitle {
-    return Intl.message(
-      'Пока пусто',
-      name: 'shopEmptyTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Товары появятся здесь`
-  String get shopEmptySubtitle {
-    return Intl.message(
-      'Товары появятся здесь',
-      name: 'shopEmptySubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Список`
-  String get shopLayoutList {
-    return Intl.message('Список', name: 'shopLayoutList', desc: '', args: []);
-  }
-
-  /// `Сетка`
-  String get shopLayoutGrid {
-    return Intl.message('Сетка', name: 'shopLayoutGrid', desc: '', args: []);
-  }
-
-  /// `Товар`
-  String get shopProductDetailTitle {
-    return Intl.message(
-      'Товар',
-      name: 'shopProductDetailTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Описание`
-  String get shopProductDescription {
-    return Intl.message(
-      'Описание',
-      name: 'shopProductDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Главная`
   String get navHome {
     return Intl.message('Главная', name: 'navHome', desc: '', args: []);
@@ -649,406 +404,11 @@ class S {
     return Intl.message('Профиль', name: 'navProfile', desc: '', args: []);
   }
 
-  /// `Демо компонентов`
-  String get profileDemoSectionTitle {
-    return Intl.message(
-      'Демо компонентов',
-      name: 'profileDemoSectionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Примеры виджетов из core/components`
-  String get profileDemoSectionSubtitle {
-    return Intl.message(
-      'Примеры виджетов из core/components',
-      name: 'profileDemoSectionSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Медиа и файлы`
-  String get profileMediaDemoTitle {
-    return Intl.message(
-      'Медиа и файлы',
-      name: 'profileMediaDemoTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Лента фото/видео, загрузка файлов, просмотр, шаринг`
-  String get profileMediaDemoSubtitle {
-    return Intl.message(
-      'Лента фото/видео, загрузка файлов, просмотр, шаринг',
-      name: 'profileMediaDemoSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Календарь`
-  String get profileCalendarDemoTitle {
-    return Intl.message(
-      'Календарь',
-      name: 'profileCalendarDemoTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Кастомный календарь: диапазон дат, маркеры, list/page`
-  String get profileCalendarDemoSubtitle {
-    return Intl.message(
-      'Кастомный календарь: диапазон дат, маркеры, list/page',
-      name: 'profileCalendarDemoSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Карта`
-  String get profileMapDemoTitle {
-    return Intl.message(
-      'Карта',
-      name: 'profileMapDemoTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Yandex MapKit: preview, fullscreen, pick, cluster, polyline`
-  String get profileMapDemoSubtitle {
-    return Intl.message(
-      'Yandex MapKit: preview, fullscreen, pick, cluster, polyline',
-      name: 'profileMapDemoSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Чаты`
-  String get profileChatDemoTitle {
-    return Intl.message(
-      'Чаты',
-      name: 'profileChatDemoTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Список комнат, сообщения, WebSocket в реальном времени`
-  String get profileChatDemoSubtitle {
-    return Intl.message(
-      'Список комнат, сообщения, WebSocket в реальном времени',
-      name: 'profileChatDemoSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Чат`
-  String get profileChatDirectDemoTitle {
-    return Intl.message(
-      'Чат',
-      name: 'profileChatDirectDemoTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Прямой вход в единственный чат без списка комнат`
-  String get profileChatDirectDemoSubtitle {
-    return Intl.message(
-      'Прямой вход в единственный чат без списка комнат',
-      name: 'profileChatDirectDemoSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Чаты`
-  String get chatListTitle {
-    return Intl.message('Чаты', name: 'chatListTitle', desc: '', args: []);
-  }
-
-  /// `Нет чатов`
-  String get chatListEmptyTitle {
-    return Intl.message(
-      'Нет чатов',
-      name: 'chatListEmptyTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Здесь появятся ваши переписки`
-  String get chatListEmptySubtitle {
-    return Intl.message(
-      'Здесь появятся ваши переписки',
-      name: 'chatListEmptySubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Нет сообщений`
-  String get chatEmptyTitle {
-    return Intl.message(
-      'Нет сообщений',
-      name: 'chatEmptyTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Напишите первое сообщение`
-  String get chatEmptySubtitle {
-    return Intl.message(
-      'Напишите первое сообщение',
-      name: 'chatEmptySubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Сообщение`
-  String get chatMessageInputHint {
-    return Intl.message(
-      'Сообщение',
-      name: 'chatMessageInputHint',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `{userName} печатает...`
-  String chatTypingSingle(String userName) {
-    return Intl.message(
-      '$userName печатает...',
-      name: 'chatTypingSingle',
-      desc: '',
-      args: [userName],
-    );
-  }
-
-  /// `Печатают...`
-  String get chatTypingMultiple {
-    return Intl.message(
-      'Печатают...',
-      name: 'chatTypingMultiple',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Не удалось отправить сообщение`
   String get chatSendMessageFailed {
     return Intl.message(
       'Не удалось отправить сообщение',
       name: 'chatSendMessageFailed',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Медиа и файлы`
-  String get demoMediaFilesTitle {
-    return Intl.message(
-      'Медиа и файлы',
-      name: 'demoMediaFilesTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Фото (редактируемая лента)`
-  String get demoPhotoSectionTitle {
-    return Intl.message(
-      'Фото (редактируемая лента)',
-      name: 'demoPhotoSectionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Только изображения. При добавлении открывается croppy для обрезки.`
-  String get demoPhotoSectionSubtitle {
-    return Intl.message(
-      'Только изображения. При добавлении открывается croppy для обрезки.',
-      name: 'demoPhotoSectionSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Фото и видео (mixed)`
-  String get demoMixedSectionTitle {
-    return Intl.message(
-      'Фото и видео (mixed)',
-      name: 'demoMixedSectionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Смешанная лента. С камеры — выбор фото или видео, из галереи — любой тип.`
-  String get demoMixedSectionSubtitle {
-    return Intl.message(
-      'Смешанная лента. С камеры — выбор фото или видео, из галереи — любой тип.',
-      name: 'demoMixedSectionSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Только просмотр`
-  String get demoReadOnlySectionTitle {
-    return Intl.message(
-      'Только просмотр',
-      name: 'demoReadOnlySectionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Те же элементы, что в mixed-ленте, но без кнопок добавления и удаления.`
-  String get demoReadOnlySectionSubtitle {
-    return Intl.message(
-      'Те же элементы, что в mixed-ленте, но без кнопок добавления и удаления.',
-      name: 'demoReadOnlySectionSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Загрузка файлов`
-  String get demoFilesSectionTitle {
-    return Intl.message(
-      'Загрузка файлов',
-      name: 'demoFilesSectionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `PDF, документы и другие типы через file_picker.`
-  String get demoFilesSectionSubtitle {
-    return Intl.message(
-      'PDF, документы и другие типы через file_picker.',
-      name: 'demoFilesSectionSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Шаринг`
-  String get demoShareSectionTitle {
-    return Intl.message(
-      'Шаринг',
-      name: 'demoShareSectionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `share_plus — ссылка, текст и выбранные файлы.`
-  String get demoShareSectionSubtitle {
-    return Intl.message(
-      'share_plus — ссылка, текст и выбранные файлы.',
-      name: 'demoShareSectionSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Демо ссылка из приложения`
-  String get demoShareLinkText {
-    return Intl.message(
-      'Демо ссылка из приложения',
-      name: 'demoShareLinkText',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Поделиться текстом`
-  String get demoShareTextButton {
-    return Intl.message(
-      'Поделиться текстом',
-      name: 'demoShareTextButton',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Поделиться файлами`
-  String get demoShareFilesButton {
-    return Intl.message(
-      'Поделиться файлами',
-      name: 'demoShareFilesButton',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Скопировать mixed-ленту в режим просмотра`
-  String get demoSyncMixedButton {
-    return Intl.message(
-      'Скопировать mixed-ленту в режим просмотра',
-      name: 'demoSyncMixedButton',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Вложения`
-  String get demoAttachmentsLabel {
-    return Intl.message(
-      'Вложения',
-      name: 'demoAttachmentsLabel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Календарь`
-  String get demoCalendarTitle {
-    return Intl.message(
-      'Календарь',
-      name: 'demoCalendarTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Свайп между месяцами, выбор диапазона дат. Переключите режим в меню AppBar.`
-  String get demoCalendarSubtitle {
-    return Intl.message(
-      'Свайп между месяцами, выбор диапазона дат. Переключите режим в меню AppBar.',
-      name: 'demoCalendarSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Список месяцев`
-  String get demoCalendarListMode {
-    return Intl.message(
-      'Список месяцев',
-      name: 'demoCalendarListMode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `PageView`
-  String get demoCalendarPageMode {
-    return Intl.message(
-      'PageView',
-      name: 'demoCalendarPageMode',
       desc: '',
       args: [],
     );
@@ -1134,21 +494,6 @@ class S {
     return Intl.message(
       'Не удалось выбрать файлы',
       name: 'filePickError',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Файл`
-  String get fileViewerTitle {
-    return Intl.message('Файл', name: 'fileViewerTitle', desc: '', args: []);
-  }
-
-  /// `Медиа`
-  String get fileViewerMediaTitle {
-    return Intl.message(
-      'Медиа',
-      name: 'fileViewerMediaTitle',
       desc: '',
       args: [],
     );
@@ -1264,126 +609,51 @@ class S {
     return Intl.message('Ок', name: 'universalModalOk', desc: '', args: []);
   }
 
-  /// `Карта`
-  String get demoMapTitle {
-    return Intl.message('Карта', name: 'demoMapTitle', desc: '', args: []);
-  }
-
-  /// `Yandex MapKit Lite: preview, fullscreen, геолокация, cluster, polyline, snapshot. Поиск/геокодер не входят в модуль.`
-  String get demoMapSubtitle {
+  /// `Персонажи`
+  String get charactersTitle {
     return Intl.message(
-      'Yandex MapKit Lite: preview, fullscreen, геолокация, cluster, polyline, snapshot. Поиск/геокодер не входят в модуль.',
-      name: 'demoMapSubtitle',
+      'Персонажи',
+      name: 'charactersTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Превью`
-  String get demoMapPreviewTitle {
+  /// `Персонажи не найдены`
+  String get charactersEmpty {
     return Intl.message(
-      'Превью',
-      name: 'demoMapPreviewTitle',
+      'Персонажи не найдены',
+      name: 'charactersEmpty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Полноэкранная карта`
-  String get demoMapFullscreenTitle {
+  /// `Жив`
+  String get characterStatusAlive {
     return Intl.message(
-      'Полноэкранная карта',
-      name: 'demoMapFullscreenTitle',
+      'Жив',
+      name: 'characterStatusAlive',
       desc: '',
       args: [],
     );
   }
 
-  /// `Zoom, my location, compass, traffic, auto-locate`
-  String get demoMapFullscreenSubtitle {
+  /// `Мёртв`
+  String get characterStatusDead {
     return Intl.message(
-      'Zoom, my location, compass, traffic, auto-locate',
-      name: 'demoMapFullscreenSubtitle',
+      'Мёртв',
+      name: 'characterStatusDead',
       desc: '',
       args: [],
     );
   }
 
-  /// `Выбор точки`
-  String get demoMapPickTitle {
+  /// `Неизвестно`
+  String get characterStatusUnknown {
     return Intl.message(
-      'Выбор точки',
-      name: 'demoMapPickTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Тап по карте → подтверждение`
-  String get demoMapPickSubtitle {
-    return Intl.message(
-      'Тап по карте → подтверждение',
-      name: 'demoMapPickSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Кластеры`
-  String get demoMapClusterTitle {
-    return Intl.message(
-      'Кластеры',
-      name: 'demoMapClusterTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Группировка маркеров при отдалении`
-  String get demoMapClusterSubtitle {
-    return Intl.message(
-      'Группировка маркеров при отдалении',
-      name: 'demoMapClusterSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Полилиния`
-  String get demoMapPolylineTitle {
-    return Intl.message(
-      'Полилиния',
-      name: 'demoMapPolylineTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Линия по списку точек (без Directions API)`
-  String get demoMapPolylineSubtitle {
-    return Intl.message(
-      'Линия по списку точек (без Directions API)',
-      name: 'demoMapPolylineSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Снимок карты`
-  String get demoMapSnapshotTitle {
-    return Intl.message(
-      'Снимок карты',
-      name: 'demoMapSnapshotTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Screenshot MapKit → шаринг PNG`
-  String get demoMapSnapshotSubtitle {
-    return Intl.message(
-      'Screenshot MapKit → шаринг PNG',
-      name: 'demoMapSnapshotSubtitle',
+      'Неизвестно',
+      name: 'characterStatusUnknown',
       desc: '',
       args: [],
     );

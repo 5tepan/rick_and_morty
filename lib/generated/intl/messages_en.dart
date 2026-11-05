@@ -20,19 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(userName) => "${userName} is typing...";
+  static String m0(path) => "Saved: ${path}";
 
-  static String m1(phone) =>
-      "An SMS with a confirmation code\nwas sent to ${phone}";
-
-  static String m2(path) => "Saved: ${path}";
-
-  static String m3(current, total) => "${current} / ${total}";
-
-  static String m4(buttonText) =>
-      "By tapping «${buttonText}», you agree to the ";
-
-  static String m5(time) => "Resend in ${time}";
+  static String m1(current, total) => "${current} / ${total}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -67,30 +57,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "apiUnknownError": MessageLookupByLibrary.simpleMessage(
       "Unknown error. Please try again later",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Base Flutter"),
-    "authConfirmCodeError": MessageLookupByLibrary.simpleMessage(
-      "Failed to verify code. Please try again later",
-    ),
     "authInvalidConfirmationCode": MessageLookupByLibrary.simpleMessage(
       "Invalid confirmation code",
     ),
     "authPhoneRequired": MessageLookupByLibrary.simpleMessage(
       "Enter phone number",
     ),
-    "authPhoneTitle": MessageLookupByLibrary.simpleMessage(
-      "Enter your phone number\nto receive a confirmation code",
-    ),
     "authRefreshSessionFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to refresh session",
     ),
-    "authResendCodeError": MessageLookupByLibrary.simpleMessage(
-      "Failed to resend code",
-    ),
     "authResendCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to resend code",
-    ),
-    "authSendCodeError": MessageLookupByLibrary.simpleMessage(
-      "Failed to send code. Please try again later",
     ),
     "authSendCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to send code",
@@ -101,109 +78,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "authVerifyCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to verify code",
     ),
-    "chatEmptySubtitle": MessageLookupByLibrary.simpleMessage(
-      "Send the first message",
+    "characterStatusAlive": MessageLookupByLibrary.simpleMessage("Alive"),
+    "characterStatusDead": MessageLookupByLibrary.simpleMessage("Dead"),
+    "characterStatusUnknown": MessageLookupByLibrary.simpleMessage("Unknown"),
+    "charactersEmpty": MessageLookupByLibrary.simpleMessage(
+      "No characters found",
     ),
-    "chatEmptyTitle": MessageLookupByLibrary.simpleMessage("No messages"),
-    "chatListEmptySubtitle": MessageLookupByLibrary.simpleMessage(
-      "Your conversations will appear here",
-    ),
-    "chatListEmptyTitle": MessageLookupByLibrary.simpleMessage("No chats"),
-    "chatListTitle": MessageLookupByLibrary.simpleMessage("Chats"),
-    "chatMessageInputHint": MessageLookupByLibrary.simpleMessage("Message"),
+    "charactersTitle": MessageLookupByLibrary.simpleMessage("Characters"),
     "chatSendMessageFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to send message",
     ),
-    "chatTypingMultiple": MessageLookupByLibrary.simpleMessage(
-      "Several people are typing...",
-    ),
-    "chatTypingSingle": m0,
-    "codeSentToPhone": m1,
-    "confirmationCodeLabel": MessageLookupByLibrary.simpleMessage(
-      "Confirmation code",
-    ),
-    "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "dateTimeSelect": MessageLookupByLibrary.simpleMessage("Select"),
     "dateTimeSelectTime": MessageLookupByLibrary.simpleMessage("Select time"),
     "dateTimeSelectYear": MessageLookupByLibrary.simpleMessage("Select year"),
-    "demoAttachmentsLabel": MessageLookupByLibrary.simpleMessage("Attachments"),
-    "demoCalendarListMode": MessageLookupByLibrary.simpleMessage("Month list"),
-    "demoCalendarPageMode": MessageLookupByLibrary.simpleMessage("PageView"),
-    "demoCalendarSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Swipe between months and pick a date range. Switch mode from the AppBar menu.",
-    ),
-    "demoCalendarTitle": MessageLookupByLibrary.simpleMessage("Calendar"),
-    "demoFilesSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "PDF, documents and other types via file_picker.",
-    ),
-    "demoFilesSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "File upload",
-    ),
-    "demoMapClusterSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Group markers when zoomed out",
-    ),
-    "demoMapClusterTitle": MessageLookupByLibrary.simpleMessage("Clusters"),
-    "demoMapFullscreenSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Zoom, my location, compass, traffic, auto-locate",
-    ),
-    "demoMapFullscreenTitle": MessageLookupByLibrary.simpleMessage(
-      "Fullscreen map",
-    ),
-    "demoMapPickSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Tap the map → confirm",
-    ),
-    "demoMapPickTitle": MessageLookupByLibrary.simpleMessage("Pick a point"),
-    "demoMapPolylineSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Line from a list of points (no Directions API)",
-    ),
-    "demoMapPolylineTitle": MessageLookupByLibrary.simpleMessage("Polyline"),
-    "demoMapPreviewTitle": MessageLookupByLibrary.simpleMessage("Preview"),
-    "demoMapSnapshotSubtitle": MessageLookupByLibrary.simpleMessage(
-      "MapKit screenshot → share PNG",
-    ),
-    "demoMapSnapshotTitle": MessageLookupByLibrary.simpleMessage(
-      "Map snapshot",
-    ),
-    "demoMapSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Yandex MapKit Lite: preview, fullscreen, location, cluster, polyline, snapshot. Search/geocoder are outside this module.",
-    ),
-    "demoMapTitle": MessageLookupByLibrary.simpleMessage("Map"),
-    "demoMediaFilesTitle": MessageLookupByLibrary.simpleMessage(
-      "Media and files",
-    ),
-    "demoMixedSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Mixed feed. Camera: photo or video; gallery: any type.",
-    ),
-    "demoMixedSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Photos and videos (mixed)",
-    ),
-    "demoPhotoSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Images only. Croppy opens when adding a photo.",
-    ),
-    "demoPhotoSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Photos (editable feed)",
-    ),
-    "demoReadOnlySectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Same items as the mixed feed, without add or remove.",
-    ),
-    "demoReadOnlySectionTitle": MessageLookupByLibrary.simpleMessage(
-      "View only",
-    ),
-    "demoShareFilesButton": MessageLookupByLibrary.simpleMessage("Share files"),
-    "demoShareLinkText": MessageLookupByLibrary.simpleMessage(
-      "Demo link from the app",
-    ),
-    "demoShareSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "share_plus — link, text and selected files.",
-    ),
-    "demoShareSectionTitle": MessageLookupByLibrary.simpleMessage("Sharing"),
-    "demoShareTextButton": MessageLookupByLibrary.simpleMessage("Share text"),
-    "demoSyncMixedButton": MessageLookupByLibrary.simpleMessage(
-      "Copy mixed feed to view-only mode",
-    ),
-    "documentDefaultTitle": MessageLookupByLibrary.simpleMessage("Document"),
     "enterCode": MessageLookupByLibrary.simpleMessage("Enter the code"),
-    "enterPhone": MessageLookupByLibrary.simpleMessage("Enter phone number"),
     "errorLoadingText": MessageLookupByLibrary.simpleMessage(
       "Data could not be loaded. Please try again.",
     ),
@@ -220,21 +108,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "fileViewerLocalUnavailable": MessageLookupByLibrary.simpleMessage(
       "Local file unavailable",
     ),
-    "fileViewerMediaTitle": MessageLookupByLibrary.simpleMessage("Media"),
     "fileViewerPreviewUnavailable": MessageLookupByLibrary.simpleMessage(
       "Preview unavailable",
     ),
     "fileViewerSaveFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to save file",
     ),
-    "fileViewerSaved": m2,
-    "fileViewerTitle": MessageLookupByLibrary.simpleMessage("File"),
+    "fileViewerSaved": m0,
     "inDevelopment": MessageLookupByLibrary.simpleMessage("In development"),
     "mediaFeedAddTitle": MessageLookupByLibrary.simpleMessage("Add media"),
     "mediaFeedCamera": MessageLookupByLibrary.simpleMessage("Camera"),
     "mediaFeedGallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "mediaFeedGalleryClose": MessageLookupByLibrary.simpleMessage("Close"),
-    "mediaFeedGalleryCounter": m3,
+    "mediaFeedGalleryCounter": m1,
     "mediaFeedPhoto": MessageLookupByLibrary.simpleMessage("Photo"),
     "mediaFeedVideo": MessageLookupByLibrary.simpleMessage("Video"),
     "navHome": MessageLookupByLibrary.simpleMessage("Home"),
@@ -246,60 +132,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneInvalid": MessageLookupByLibrary.simpleMessage(
       "Enter a valid phone number",
     ),
-    "phoneLabel": MessageLookupByLibrary.simpleMessage("Phone"),
-    "privacyAgreementAnd": MessageLookupByLibrary.simpleMessage("\nand "),
-    "privacyAgreementPrefix": m4,
-    "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
-    "privacyPolicyTitle": MessageLookupByLibrary.simpleMessage(
-      "Privacy Policy",
-    ),
-    "profileCalendarDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Custom calendar: range selection, markers, list/page modes",
-    ),
-    "profileCalendarDemoTitle": MessageLookupByLibrary.simpleMessage(
-      "Calendar",
-    ),
-    "profileChatDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Room list, messages, real-time WebSocket updates",
-    ),
-    "profileChatDemoTitle": MessageLookupByLibrary.simpleMessage("Chats"),
-    "profileChatDirectDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Open the single chat directly, without the room list",
-    ),
-    "profileChatDirectDemoTitle": MessageLookupByLibrary.simpleMessage("Chat"),
-    "profileDemoSectionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Examples from core/components",
-    ),
-    "profileDemoSectionTitle": MessageLookupByLibrary.simpleMessage(
-      "Component demos",
-    ),
-    "profileMapDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Yandex MapKit: preview, fullscreen, pick, cluster, polyline",
-    ),
-    "profileMapDemoTitle": MessageLookupByLibrary.simpleMessage("Map"),
-    "profileMediaDemoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Photo/video feed, file upload, preview, sharing",
-    ),
-    "profileMediaDemoTitle": MessageLookupByLibrary.simpleMessage(
-      "Media and files",
-    ),
-    "resendCodeButton": MessageLookupByLibrary.simpleMessage("Resend code"),
-    "resendCodeIn": m5,
     "shareButton": MessageLookupByLibrary.simpleMessage("Share"),
     "shareLinkButton": MessageLookupByLibrary.simpleMessage("Share link"),
-    "shopEmptySubtitle": MessageLookupByLibrary.simpleMessage(
-      "Products will appear here",
-    ),
-    "shopEmptyTitle": MessageLookupByLibrary.simpleMessage("Nothing here yet"),
-    "shopLayoutGrid": MessageLookupByLibrary.simpleMessage("Grid"),
-    "shopLayoutList": MessageLookupByLibrary.simpleMessage("List"),
-    "shopProductDescription": MessageLookupByLibrary.simpleMessage(
-      "Description",
-    ),
-    "shopProductDetailTitle": MessageLookupByLibrary.simpleMessage("Product"),
-    "shopTitle": MessageLookupByLibrary.simpleMessage("Shop"),
-    "termsOfUse": MessageLookupByLibrary.simpleMessage("Terms of Use"),
-    "termsOfUseTitle": MessageLookupByLibrary.simpleMessage("Terms of Use"),
     "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
     "universalModalNo": MessageLookupByLibrary.simpleMessage("No"),
     "universalModalOk": MessageLookupByLibrary.simpleMessage("OK"),
@@ -327,6 +161,5 @@ class MessageLookup extends MessageLookupByLibrary {
     "validationSurname": MessageLookupByLibrary.simpleMessage(
       "Enter last name",
     ),
-    "webViewNoUrl": MessageLookupByLibrary.simpleMessage("No URL provided"),
   };
 }

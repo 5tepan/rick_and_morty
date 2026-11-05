@@ -47,7 +47,7 @@ class PaginatedScrollView<T> extends StatelessWidget {
       onRefresh: onRefresh,
       child: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
-          if (state.isLoadingMore || state.isAllLoaded) {
+          if (state.isLoadingMore || state.isAllLoaded || state.hasError) {
             return false;
           }
           if (notification.metrics.extentAfter < loadMoreThreshold) {

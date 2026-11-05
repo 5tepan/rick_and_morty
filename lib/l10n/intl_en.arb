@@ -1,53 +1,12 @@
 {
   "@@locale": "en",
-  "appTitle": "Base Flutter",
-  "continueButton": "Continue",
-  "authPhoneTitle": "Enter your phone number\nto receive a confirmation code",
-  "phoneLabel": "Phone",
-  "confirmationCodeLabel": "Confirmation code",
-  "codeSentToPhone": "An SMS with a confirmation code\nwas sent to {phone}",
-  "@codeSentToPhone": {
-    "placeholders": {
-      "phone": {
-        "type": "String"
-      }
-    }
-  },
-  "resendCodeIn": "Resend in {time}",
-  "@resendCodeIn": {
-    "placeholders": {
-      "time": {
-        "type": "String"
-      }
-    }
-  },
-  "resendCodeButton": "Resend code",
   "noInternet": "You are offline. Check your internet connection.",
   "inDevelopment": "In development",
-  "privacyAgreementPrefix": "By tapping «{buttonText}», you agree to the ",
-  "@privacyAgreementPrefix": {
-    "placeholders": {
-      "buttonText": {
-        "type": "String"
-      }
-    }
-  },
-  "privacyPolicy": "Privacy Policy",
-  "privacyAgreementAnd": "\nand ",
-  "termsOfUse": "Terms of Use",
-  "termsOfUseTitle": "Terms of Use",
-  "privacyPolicyTitle": "Privacy Policy",
-  "documentDefaultTitle": "Document",
-  "webViewNoUrl": "No URL provided",
   "tryAgain": "Try again",
   "errorLoadingTitle": "Failed to load data",
   "errorLoadingText": "Data could not be loaded. Please try again.",
   "enterCode": "Enter the code",
-  "enterPhone": "Enter phone number",
   "phoneInvalid": "Enter a valid phone number",
-  "authSendCodeError": "Failed to send code. Please try again later",
-  "authConfirmCodeError": "Failed to verify code. Please try again later",
-  "authResendCodeError": "Failed to resend code",
   "apiNoInternet": "No internet. Please try again later.",
   "apiConnectionError": "Internet connection error",
   "apiUnknownError": "Unknown error. Please try again later",
@@ -75,64 +34,10 @@
   "validationEmailRequired": "Enter e-mail",
   "validationEmailInvalid": "Invalid e-mail",
   "validationPasswordMismatch": "passwords must match",
-  "shopTitle": "Shop",
-  "shopEmptyTitle": "Nothing here yet",
-  "shopEmptySubtitle": "Products will appear here",
-  "shopLayoutList": "List",
-  "shopLayoutGrid": "Grid",
-  "shopProductDetailTitle": "Product",
-  "shopProductDescription": "Description",
   "navHome": "Home",
   "navShop": "Shop",
   "navProfile": "Profile",
-  "profileDemoSectionTitle": "Component demos",
-  "profileDemoSectionSubtitle": "Examples from core/components",
-  "profileMediaDemoTitle": "Media and files",
-  "profileMediaDemoSubtitle": "Photo/video feed, file upload, preview, sharing",
-  "profileCalendarDemoTitle": "Calendar",
-  "profileCalendarDemoSubtitle": "Custom calendar: range selection, markers, list/page modes",
-  "profileMapDemoTitle": "Map",
-  "profileMapDemoSubtitle": "Yandex MapKit: preview, fullscreen, pick, cluster, polyline",
-  "profileChatDemoTitle": "Chats",
-  "profileChatDemoSubtitle": "Room list, messages, real-time WebSocket updates",
-  "profileChatDirectDemoTitle": "Chat",
-  "profileChatDirectDemoSubtitle": "Open the single chat directly, without the room list",
-  "chatListTitle": "Chats",
-  "chatListEmptyTitle": "No chats",
-  "chatListEmptySubtitle": "Your conversations will appear here",
-  "chatEmptyTitle": "No messages",
-  "chatEmptySubtitle": "Send the first message",
-  "chatMessageInputHint": "Message",
-  "chatTypingSingle": "{userName} is typing...",
-  "@chatTypingSingle": {
-    "placeholders": {
-      "userName": {
-        "type": "String"
-      }
-    }
-  },
-  "chatTypingMultiple": "Several people are typing...",
   "chatSendMessageFailed": "Failed to send message",
-  "demoMediaFilesTitle": "Media and files",
-  "demoPhotoSectionTitle": "Photos (editable feed)",
-  "demoPhotoSectionSubtitle": "Images only. Croppy opens when adding a photo.",
-  "demoMixedSectionTitle": "Photos and videos (mixed)",
-  "demoMixedSectionSubtitle": "Mixed feed. Camera: photo or video; gallery: any type.",
-  "demoReadOnlySectionTitle": "View only",
-  "demoReadOnlySectionSubtitle": "Same items as the mixed feed, without add or remove.",
-  "demoFilesSectionTitle": "File upload",
-  "demoFilesSectionSubtitle": "PDF, documents and other types via file_picker.",
-  "demoShareSectionTitle": "Sharing",
-  "demoShareSectionSubtitle": "share_plus — link, text and selected files.",
-  "demoShareLinkText": "Demo link from the app",
-  "demoShareTextButton": "Share text",
-  "demoShareFilesButton": "Share files",
-  "demoSyncMixedButton": "Copy mixed feed to view-only mode",
-  "demoAttachmentsLabel": "Attachments",
-  "demoCalendarTitle": "Calendar",
-  "demoCalendarSubtitle": "Swipe between months and pick a date range. Switch mode from the AppBar menu.",
-  "demoCalendarListMode": "Month list",
-  "demoCalendarPageMode": "PageView",
   "mediaFeedAddTitle": "Add media",
   "mediaFeedCamera": "Camera",
   "mediaFeedGallery": "Gallery",
@@ -153,8 +58,6 @@
   "fileListEmpty": "No files selected",
   "filePickButton": "Choose files",
   "filePickError": "Failed to choose files",
-  "fileViewerTitle": "File",
-  "fileViewerMediaTitle": "Media",
   "fileViewerPreviewUnavailable": "Preview unavailable",
   "fileViewerLocalUnavailable": "Local file unavailable",
   "fileViewerSaveFailed": "Failed to save file",
@@ -176,17 +79,9 @@
   "universalModalYes": "Yes",
   "universalModalNo": "No",
   "universalModalOk": "OK",
-  "demoMapTitle": "Map",
-  "demoMapSubtitle": "Yandex MapKit Lite: preview, fullscreen, location, cluster, polyline, snapshot. Search/geocoder are outside this module.",
-  "demoMapPreviewTitle": "Preview",
-  "demoMapFullscreenTitle": "Fullscreen map",
-  "demoMapFullscreenSubtitle": "Zoom, my location, compass, traffic, auto-locate",
-  "demoMapPickTitle": "Pick a point",
-  "demoMapPickSubtitle": "Tap the map → confirm",
-  "demoMapClusterTitle": "Clusters",
-  "demoMapClusterSubtitle": "Group markers when zoomed out",
-  "demoMapPolylineTitle": "Polyline",
-  "demoMapPolylineSubtitle": "Line from a list of points (no Directions API)",
-  "demoMapSnapshotTitle": "Map snapshot",
-  "demoMapSnapshotSubtitle": "MapKit screenshot → share PNG"
+  "charactersTitle": "Characters",
+  "charactersEmpty": "No characters found",
+  "characterStatusAlive": "Alive",
+  "characterStatusDead": "Dead",
+  "characterStatusUnknown": "Unknown"
 }

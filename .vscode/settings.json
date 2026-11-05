@@ -2,6 +2,8 @@
     "editor.fontLigatures": true,
     "dart.flutterSdkPath": "~/development/flutter",
     "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Dart-Code.dart-code",
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit",
             "source.fixAll": "always"

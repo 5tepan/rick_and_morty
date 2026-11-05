@@ -2,7 +2,9 @@ import 'package:base_flutter_proj/core/base/base_pages/pagination/paginated_list
 import 'package:base_flutter_proj/core/base/base_pages/pagination/paginated_scroll_view.dart';
 import 'package:base_flutter_proj/core/base/base_pages/pagination/paginated_state.dart';
 import 'package:base_flutter_proj/core/components/app_loading_indicator.dart';
+import 'package:base_flutter_proj/core/l10n/error_localizer.dart';
 import 'package:base_flutter_proj/core/theme/theme_builder.dart';
+import 'package:base_flutter_proj/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 /// Список с пагинацией, pull-to-refresh и обработкой состояний [PaginatedState].
@@ -17,6 +19,7 @@ class PaginatedListView<T> extends StatelessWidget {
     required this.onRefresh,
     required this.onLoadMore,
     required this.onRetry,
+    this.onLoadMoreRetry,
     super.key,
     this.listLayout = const PaginatedListLayout(),
     this.header,
@@ -30,6 +33,7 @@ class PaginatedListView<T> extends StatelessWidget {
   final Future<void> Function() onRefresh;
   final Future<void> Function() onLoadMore;
   final VoidCallback onRetry;
+  final VoidCallback? onLoadMoreRetry;
   final PaginatedListLayout listLayout;
   final Widget? header;
   final Widget? footer;
@@ -46,7 +50,9 @@ class PaginatedListView<T> extends StatelessWidget {
       empty: empty,
       loadMoreThreshold: loadMoreThreshold,
       builder: (context, physics) {
-        final itemCount = state.items.length + (state.isLoadingMore ? 1 : 0);
+        final itemCount =
+            state.items.length +
+            ((state.isLoadingMore || state.hasError) ? 1 : 0);
 
         if (header == null && footer == null) {
           return ListView.builder(
@@ -74,6 +80,31 @@ class PaginatedListView<T> extends StatelessWidget {
   }
 
   Widget _buildItem(BuildContext context, int index) {
+    if (index >= state.items.length && state.hasError) {
+      final l10n = S.of(context);
+      return Padding(
+        padding: const EdgeInsets.all(ThemeBuilder.defaultPadding),
+        child: Column(
+          children: [
+            Text(
+              ErrorLocalizer.message(
+                state.errorCode!,
+                l10n,
+                serverMessage: state.serverMessage,
+              ),
+              style: AppTextStyle.body,
+              textAlign: TextAlign.center,
+            ),
+            TextButton(
+              onPressed: state.isRefreshError
+                  ? onRefresh
+                  : (onLoadMoreRetry ?? onRetry),
+              child: Text(l10n.tryAgain),
+            ),
+          ],
+        ),
+      );
+    }
     if (index >= state.items.length) {
       return const Padding(
         padding: EdgeInsets.symmetric(vertical: ThemeBuilder.defaultPadding),
@@ -95,10 +126,7 @@ class PaginatedListView<T> extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        item,
-        separatorBuilder(context, index),
-      ],
+      children: [item, separatorBuilder(context, index)],
     );
   }
 }

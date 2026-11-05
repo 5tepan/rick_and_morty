@@ -1,53 +1,12 @@
 {
   "@@locale": "ru",
-  "appTitle": "Base Flutter",
-  "continueButton": "Продолжить",
-  "authPhoneTitle": "Введите номер телефона,\nчтобы получить код подтверждения",
-  "phoneLabel": "Телефон",
-  "confirmationCodeLabel": "Код подтверждения",
-  "codeSentToPhone": "На телефон {phone} отправлено\nСМС с кодом подтверждения",
-  "@codeSentToPhone": {
-    "placeholders": {
-      "phone": {
-        "type": "String"
-      }
-    }
-  },
-  "resendCodeIn": "Повторная отправка через {time}",
-  "@resendCodeIn": {
-    "placeholders": {
-      "time": {
-        "type": "String"
-      }
-    }
-  },
-  "resendCodeButton": "Отправить код повторно",
   "noInternet": "Вы не в сети. Проверьте подключение к Интернету.",
   "inDevelopment": "В разработке",
-  "privacyAgreementPrefix": "Нажимая на кнопку «{buttonText}», Вы\n соглашаетесь с ",
-  "@privacyAgreementPrefix": {
-    "placeholders": {
-      "buttonText": {
-        "type": "String"
-      }
-    }
-  },
-  "privacyPolicy": "Политикой конфиденциальности",
-  "privacyAgreementAnd": "\nи c ",
-  "termsOfUse": "Условиями использования",
-  "termsOfUseTitle": "Условия использования",
-  "privacyPolicyTitle": "Политика конфиденциальности",
-  "documentDefaultTitle": "Документ",
-  "webViewNoUrl": "Ссылка для отображения не передана",
   "tryAgain": "Попробовать снова",
   "errorLoadingTitle": "Ошибка загрузки данных",
   "errorLoadingText": "Данные не были загружены, пожалуйста, попробуйте еще раз",
   "enterCode": "Введите код",
-  "enterPhone": "Введите номер телефона",
   "phoneInvalid": "Введите корректный номер телефона",
-  "authSendCodeError": "Не удалось отправить код. Попробуйте позже",
-  "authConfirmCodeError": "Не удалось подтвердить код. Попробуйте позже",
-  "authResendCodeError": "Не удалось отправить код повторно",
   "apiNoInternet": "Нет интернета. Попробуйте позже.",
   "apiConnectionError": "Ошибка подключения к интернету",
   "apiUnknownError": "Неизвестная ошибка. Попробуйте позже",
@@ -75,64 +34,10 @@
   "validationEmailRequired": "Введите e-mail",
   "validationEmailInvalid": "Некорректный e-mail",
   "validationPasswordMismatch": "пароль должен совпадать",
-  "shopTitle": "Магазин",
-  "shopEmptyTitle": "Пока пусто",
-  "shopEmptySubtitle": "Товары появятся здесь",
-  "shopLayoutList": "Список",
-  "shopLayoutGrid": "Сетка",
-  "shopProductDetailTitle": "Товар",
-  "shopProductDescription": "Описание",
   "navHome": "Главная",
   "navShop": "Магазин",
   "navProfile": "Профиль",
-  "profileDemoSectionTitle": "Демо компонентов",
-  "profileDemoSectionSubtitle": "Примеры виджетов из core/components",
-  "profileMediaDemoTitle": "Медиа и файлы",
-  "profileMediaDemoSubtitle": "Лента фото/видео, загрузка файлов, просмотр, шаринг",
-  "profileCalendarDemoTitle": "Календарь",
-  "profileCalendarDemoSubtitle": "Кастомный календарь: диапазон дат, маркеры, list/page",
-  "profileMapDemoTitle": "Карта",
-  "profileMapDemoSubtitle": "Yandex MapKit: preview, fullscreen, pick, cluster, polyline",
-  "profileChatDemoTitle": "Чаты",
-  "profileChatDemoSubtitle": "Список комнат, сообщения, WebSocket в реальном времени",
-  "profileChatDirectDemoTitle": "Чат",
-  "profileChatDirectDemoSubtitle": "Прямой вход в единственный чат без списка комнат",
-  "chatListTitle": "Чаты",
-  "chatListEmptyTitle": "Нет чатов",
-  "chatListEmptySubtitle": "Здесь появятся ваши переписки",
-  "chatEmptyTitle": "Нет сообщений",
-  "chatEmptySubtitle": "Напишите первое сообщение",
-  "chatMessageInputHint": "Сообщение",
-  "chatTypingSingle": "{userName} печатает...",
-  "@chatTypingSingle": {
-    "placeholders": {
-      "userName": {
-        "type": "String"
-      }
-    }
-  },
-  "chatTypingMultiple": "Печатают...",
   "chatSendMessageFailed": "Не удалось отправить сообщение",
-  "demoMediaFilesTitle": "Медиа и файлы",
-  "demoPhotoSectionTitle": "Фото (редактируемая лента)",
-  "demoPhotoSectionSubtitle": "Только изображения. При добавлении открывается croppy для обрезки.",
-  "demoMixedSectionTitle": "Фото и видео (mixed)",
-  "demoMixedSectionSubtitle": "Смешанная лента. С камеры — выбор фото или видео, из галереи — любой тип.",
-  "demoReadOnlySectionTitle": "Только просмотр",
-  "demoReadOnlySectionSubtitle": "Те же элементы, что в mixed-ленте, но без кнопок добавления и удаления.",
-  "demoFilesSectionTitle": "Загрузка файлов",
-  "demoFilesSectionSubtitle": "PDF, документы и другие типы через file_picker.",
-  "demoShareSectionTitle": "Шаринг",
-  "demoShareSectionSubtitle": "share_plus — ссылка, текст и выбранные файлы.",
-  "demoShareLinkText": "Демо ссылка из приложения",
-  "demoShareTextButton": "Поделиться текстом",
-  "demoShareFilesButton": "Поделиться файлами",
-  "demoSyncMixedButton": "Скопировать mixed-ленту в режим просмотра",
-  "demoAttachmentsLabel": "Вложения",
-  "demoCalendarTitle": "Календарь",
-  "demoCalendarSubtitle": "Свайп между месяцами, выбор диапазона дат. Переключите режим в меню AppBar.",
-  "demoCalendarListMode": "Список месяцев",
-  "demoCalendarPageMode": "PageView",
   "mediaFeedAddTitle": "Добавить медиа",
   "mediaFeedCamera": "Камера",
   "mediaFeedGallery": "Галерея",
@@ -153,8 +58,6 @@
   "fileListEmpty": "Файлы не выбраны",
   "filePickButton": "Выбрать файлы",
   "filePickError": "Не удалось выбрать файлы",
-  "fileViewerTitle": "Файл",
-  "fileViewerMediaTitle": "Медиа",
   "fileViewerPreviewUnavailable": "Предпросмотр недоступен",
   "fileViewerLocalUnavailable": "Локальный файл недоступен",
   "fileViewerSaveFailed": "Не удалось сохранить файл",
@@ -176,17 +79,9 @@
   "universalModalYes": "Да",
   "universalModalNo": "Нет",
   "universalModalOk": "Ок",
-  "demoMapTitle": "Карта",
-  "demoMapSubtitle": "Yandex MapKit Lite: preview, fullscreen, геолокация, cluster, polyline, snapshot. Поиск/геокодер не входят в модуль.",
-  "demoMapPreviewTitle": "Превью",
-  "demoMapFullscreenTitle": "Полноэкранная карта",
-  "demoMapFullscreenSubtitle": "Zoom, my location, compass, traffic, auto-locate",
-  "demoMapPickTitle": "Выбор точки",
-  "demoMapPickSubtitle": "Тап по карте → подтверждение",
-  "demoMapClusterTitle": "Кластеры",
-  "demoMapClusterSubtitle": "Группировка маркеров при отдалении",
-  "demoMapPolylineTitle": "Полилиния",
-  "demoMapPolylineSubtitle": "Линия по списку точек (без Directions API)",
-  "demoMapSnapshotTitle": "Снимок карты",
-  "demoMapSnapshotSubtitle": "Screenshot MapKit → шаринг PNG"
+  "charactersTitle": "Персонажи",
+  "charactersEmpty": "Персонажи не найдены",
+  "characterStatusAlive": "Жив",
+  "characterStatusDead": "Мёртв",
+  "characterStatusUnknown": "Неизвестно"
 }
