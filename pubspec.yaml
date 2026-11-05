@@ -116,10 +116,14 @@ flutter:
 
 flutter_native_splash:
   image: assets/splash.png
-  color: "#ffffff"
+  color: "#172B25"
+  color_dark: "#172B25"
+  image_dark: assets/splash.png
   android_12:
     image: assets/splash.png
-    color: "#ffffff"
+    color: "#172B25"
+    color_dark: "#172B25"
+    image_dark: assets/splash.png
 
 flutter_intl:
   enabled: true

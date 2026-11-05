@@ -20,6 +20,7 @@ class CharacterDetailPage extends ConsumerWidget {
       appBarConfig: AppPageAppBarConfig(
         title: S.of(context).characterDetailTitle,
       ),
+      bodyConfig: const AppPageBodyConfig(padding: ScreenContentInsets.all),
       body: EntityStateBuilder<Character>(
         state: state,
         onRetry: notifier.reload,

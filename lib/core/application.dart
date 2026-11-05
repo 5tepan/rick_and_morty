@@ -27,7 +27,7 @@ class Application extends ConsumerWidget with DebugBannerMixin {
     final botToastBuilder = BotToastInit();
 
     final app = MaterialApp.router(
-      title: 'Base Flutter',
+      title: 'Rick and Morty',
       theme: themeBuilder.buildThemeData(),
       routerConfig: router,
       localizationsDelegates: const [

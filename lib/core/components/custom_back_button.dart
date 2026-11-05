@@ -14,10 +14,7 @@ class CustomBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       child: IconButton(
-        icon: AppIcon(
-          AppAssets.arrowBack,
-          color: color ?? AppColors.white,
-        ),
+        icon: AppIcon(AppAssets.arrowBack, color: color ?? AppColors.white),
         tooltip: MaterialLocalizations.of(context).backButtonTooltip,
         onPressed: onPressed ?? () => context.pop(),
       ),

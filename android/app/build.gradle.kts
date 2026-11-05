@@ -71,21 +71,21 @@ android {
         create("dev") {
             dimension = "app"
             manifestPlaceholders += mapOf(
-                "app_name" to "Dev Base App",
+                "app_name" to "Rick and Morty Dev",
             )
         }
         create("devbackend") {
             dimension = "app"
             applicationIdSuffix = ".devbackend"
             manifestPlaceholders += mapOf(
-                "app_name" to "Dev Backend Base App",
+                "app_name" to "Rick and Morty Dev Backend",
             )
         }
         create("prod") {
             dimension = "app"
             applicationIdSuffix = ".prod"
             manifestPlaceholders += mapOf(
-                "app_name" to "Base App",
+                "app_name" to "Rick and Morty",
             )
         }
     }

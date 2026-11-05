@@ -57,6 +57,7 @@ class _CharactersPageState extends ConsumerState<CharactersPage> {
 
     return AppPageScaffold(
       appBarConfig: AppPageAppBarConfig(title: l10n.charactersTitle),
+      bodyConfig: const AppPageBodyConfig(padding: ScreenContentInsets.all),
       body: PaginatedListFrame(
         fixedHeader: Column(
           children: [
