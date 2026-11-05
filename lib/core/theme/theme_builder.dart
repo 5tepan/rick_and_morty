@@ -26,40 +26,40 @@ abstract final class AppColors {
 
   /// Основной цвет, который чаще всего отображается на экранах и компонентах
   /// приложения.
-  static const Color primaryColor = blue;
+  static const Color primaryColor = Color(0xFF276B50);
 
-  static const Color primaryLight = Color(0xFFDCE8FF);
+  static const Color primaryLight = Color(0xFFD9F1DC);
 
   /// Цвет, который используется для контраста основного цвета (например в
   /// Notification(System) bar'е).
-  static const Color primaryVariantColor = Color(0xFF2167F3);
+  static const Color primaryVariantColor = Color(0xFFD2EBDD);
 
   /// Вторичный цвет для FAB'ов, селекторов, слайдеров, переключателей,
   /// подсветки выделенного текста, прогрессбаров, ссылок и заголовков.
-  static const Color secondaryColor = Color(0xFF4656B3);
+  static const Color secondaryColor = Color(0xFF536B58);
 
   /// Цвет, который используется для контраста вторичного цвета (например
   /// текст внутри кнопки)
-  static const Color secondaryVariantColor = Color(0xFF3846A2);
+  static const Color secondaryVariantColor = Color(0xFFDCE9DA);
 
   /// Цвет фона отображается за скролящимся содержимым.
-  static const Color backgroundColor = white;
+  static const Color backgroundColor = Color(0xFFF5F7F1);
 
   /// Цвет поверхности используется на карточках, bottomSheet и меню.
-  static const Color surfaceColor = white;
+  static const Color surfaceColor = Color(0xFFFFFFFF);
 
   /// Цвет ошибки указывает на ошибки в компонентах, например недопустимый
   /// текст в текстовом поле.
   static const Color errorColor = red;
 
   /// Цвет [Scaffold] background.
-  static const Color scaffoldBackgroundColor = white;
+  static const Color scaffoldBackgroundColor = backgroundColor;
 
   /// The background color of [Dialog] elements.
-  static const Color dialogBackground = white;
+  static const Color dialogBackground = surfaceColor;
 
   /// Background theme color for the [AppBar].
-  static const Color appBarBackground = primaryColor;
+  static const Color appBarBackground = Color(0xFF172B25);
 
   /// Background theme color for the [ProgressIndicator],
   /// [CircularProgressIndicator], [RefreshIndicator], [CupertinoActivityIndicator].
@@ -70,26 +70,42 @@ abstract final class AppColors {
   /// Такие цвета используются для того, чтобы элементы, использующие их, были
   /// четкими и разборчивыми по сравнению с цветами за ними.
   static const Color onPrimaryColor = white;
-  static const Color onSecondaryColor = black;
-  static const Color onBackgroundColor = black;
-  static const Color onSurfaceColor = black;
+  static const Color onSecondaryColor = Color(0xFF1B2B23);
+  static const Color onBackgroundColor = Color(0xFF1B2B23);
+  static const Color onSurfaceColor = Color(0xFF1B2B23);
   static const Color onErrorColor = white;
 
   /// Цвета для элементов
-  static const Color defaultText = darkGrey;
-  static const Color divider = Color(0xFFCED2DC);
-  static const Color border = Color.fromRGBO(203, 215, 222, 1.0);
+  static const Color defaultText = onSurfaceColor;
+  static const Color divider = Color(0xFFE0E7DC);
+  static const Color border = Color(0xFFD8E2D5);
   static const Color disabledBorder = Color(0xFFB9BECB);
-  static const Color hint = Color(0xB58C95E6);
+  static const Color hint = Color(0xFF687A6C);
   static const Color pinKeyboardColor = Color(0xFF03A8B4);
   static const Color pinKeyboardPressedColor = Color(0xFF0B485A);
   static const Color pinCodeFieldColor = Color(0xFFC4C4C4);
   static const Color pinCodeFieldFilledColor = Color(0xFF0B485A);
 
+  /// Цвета статусов персонажей.
+  static const Color statusAlive = Color(0xFF38875A);
+  static const Color statusDead = Color(0xFFC45245);
+  static const Color statusUnknown = Color(0xFF78867B);
+
   static const Color iosAlertButtonTextColor = Color(0xFF007AFF);
 }
 
 abstract final class AppTextStyle {
+  static const TextStyle screenTitle = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w700,
+    color: AppColors.defaultText,
+  );
+
+  static const TextStyle subtitle = TextStyle(
+    fontSize: 14,
+    color: AppColors.hint,
+  );
+
   static const TextStyle title = TextStyle(
     fontSize: 17,
     color: AppColors.onSecondaryColor,
@@ -205,16 +221,17 @@ class FulfillmentSegmentTabsStyle {
 /// Позволяет в одном месте задать внешний вид бОльшей части стандарных
 /// компонентов Flutter, и потом не дублировать код для их визуальной настройки.
 class ThemeBuilder {
-  static const double cardBorderRadius = 12.0;
-  static const double defaultPadding = 12.0;
+  static const double cardBorderRadius = 20.0;
+  static const double defaultPadding = 16.0;
   static const double defaultSmallPadding = 6.0;
 
   static SystemUiOverlayStyle get systemUiOverlayStyle =>
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.light,
-        systemNavigationBarIconBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: AppColors.backgroundColor,
+        systemNavigationBarIconBrightness: Brightness.dark,
       );
 
   ThemeData buildThemeData() {
@@ -228,6 +245,15 @@ class ThemeBuilder {
       appBarTheme: _buildAppBarTheme(),
       textTheme: textTheme,
       popupMenuTheme: _buildPopupMenuTheme(),
+      cardTheme: CardThemeData(
+        color: AppColors.surfaceColor,
+        elevation: 0,
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(cardBorderRadius),
+          side: const BorderSide(color: AppColors.border),
+        ),
+      ),
       elevatedButtonTheme: _buildElevatedButtonThemeData(),
       textButtonTheme: _buildTextButtonThemeData(),
       checkboxTheme: _buildCheckBoxThemeData(),
@@ -267,7 +293,7 @@ class ThemeBuilder {
       //Use headline6 only for customizing AppBar title
       titleLarge: TextStyle(
         fontSize: 20,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w700,
         color: textColor,
       ),
       bodyLarge: TextStyle(
@@ -299,6 +325,13 @@ class ThemeBuilder {
     return const AppBarTheme(
       backgroundColor: AppColors.appBarBackground,
       surfaceTintColor: Colors.transparent,
+      foregroundColor: AppColors.white,
+      titleTextStyle: TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        color: AppColors.white,
+      ),
       elevation: 0,
     );
   }
@@ -395,7 +428,7 @@ class ThemeBuilder {
 
   InputDecorationTheme _buildInputDecorationTheme(TextTheme textTheme) {
     final border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(16.0),
       borderSide: const BorderSide(color: AppColors.border),
     );
     final textStyle = textTheme.bodyMedium;
@@ -421,7 +454,7 @@ class ThemeBuilder {
       hintStyle: textStyle?.copyWith(color: AppColors.hint),
       labelStyle: textStyle,
       errorStyle: textStyle?.copyWith(color: AppColors.errorColor),
-      contentPadding: const EdgeInsets.all(10),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
     );
   }
 
@@ -488,9 +521,12 @@ class ThemeBuilder {
   InputDecoration buildSearchInputDecoration() {
     return const InputDecoration(
       filled: true,
-      fillColor: AppColors.white,
-      contentPadding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 16),
-      border: InputBorder.none,
+      fillColor: AppColors.surfaceColor,
+      contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderSide: BorderSide(color: AppColors.border),
+      ),
       hintStyle: TextStyle(color: AppColors.hint),
       errorMaxLines: 1,
     );
