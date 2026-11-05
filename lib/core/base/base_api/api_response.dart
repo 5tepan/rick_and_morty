@@ -8,11 +8,11 @@ class ApiResponse<T> extends BaseApiResponse {
 
   ApiResponse({required BaseApiResponse baseApiResponse, this.result})
     : super(
-        meta: baseApiResponse.meta,
         rawData: baseApiResponse.rawData,
         errorCode: baseApiResponse.errorCode,
         serverMessage: baseApiResponse.serverMessage,
         dataJson: baseApiResponse.dataJson,
+        statusCode: baseApiResponse.statusCode,
       ) {
     logError();
   }
@@ -22,11 +22,11 @@ class ApiResponse<T> extends BaseApiResponse {
     String? serverMessage,
     required BaseApiResponse baseApiResponse,
   }) : super(
-         meta: baseApiResponse.meta,
          rawData: baseApiResponse.rawData,
          errorCode: errorCode,
          serverMessage: serverMessage,
          dataJson: baseApiResponse.dataJson,
+         statusCode: baseApiResponse.statusCode,
        ) {
     logError();
   }
@@ -37,9 +37,7 @@ class ApiResponse<T> extends BaseApiResponse {
       CustomLogger.warning('No server response');
     }
     if (isError) {
-      CustomLogger.error(
-        'Error: ${errorCode ?? serverMessage ?? ''}',
-      );
+      CustomLogger.error('Error: ${errorCode ?? serverMessage ?? ''}');
     }
   }
 }

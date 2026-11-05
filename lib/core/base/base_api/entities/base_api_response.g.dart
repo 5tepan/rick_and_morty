@@ -8,22 +8,20 @@ part of 'base_api_response.dart';
 
 BaseApiResponse _$BaseApiResponseFromJson(Map<String, dynamic> json) =>
     BaseApiResponse(
-      meta: json['meta'] == null
-          ? null
-          : ApiResponseMeta.fromJson(json['meta'] as Map<String, dynamic>),
       rawData: json['rawData'] as String?,
       errorCode: $enumDecodeNullable(_$AppErrorCodeEnumMap, json['errorCode']),
       serverMessage: json['serverMessage'] as String?,
       dataJson: json['dataJson'],
+      statusCode: (json['statusCode'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$BaseApiResponseToJson(BaseApiResponse instance) =>
     <String, dynamic>{
-      'meta': instance.meta,
       'rawData': instance.rawData,
       'errorCode': _$AppErrorCodeEnumMap[instance.errorCode],
       'serverMessage': instance.serverMessage,
       'dataJson': instance.dataJson,
+      'statusCode': instance.statusCode,
     };
 
 const _$AppErrorCodeEnumMap = {

@@ -5,9 +5,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 /// Публичный API-клиент: без Authorization и refresh token.
 /// Для публичных REST-эндпоинтов.
 final publicApiProvider = Provider<PublicApi>((ref) {
-  return PublicApi(
+  final api = PublicApi(
     config: ref.watch(configProvider),
     packageInfo: ref.watch(packageInfoProvider),
     checkConnection: () => ref.read(connectivityCheckProvider),
   );
+  ref.onDispose(() => api.client.close());
+  return api;
 });
