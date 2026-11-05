@@ -658,6 +658,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Поиск по имени`
+  String get charactersSearchHint {
+    return Intl.message(
+      'Поиск по имени',
+      name: 'charactersSearchHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ничего не найдено`
+  String get charactersSearchEmpty {
+    return Intl.message(
+      'Ничего не найдено',
+      name: 'charactersSearchEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Очистить поиск`
+  String get charactersSearchClear {
+    return Intl.message(
+      'Очистить поиск',
+      name: 'charactersSearchClear',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

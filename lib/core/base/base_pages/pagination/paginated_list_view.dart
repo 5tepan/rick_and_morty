@@ -22,6 +22,7 @@ class PaginatedListView<T> extends StatelessWidget {
     this.onLoadMoreRetry,
     super.key,
     this.listLayout = const PaginatedListLayout(),
+    this.controller,
     this.header,
     this.footer,
     this.empty,
@@ -35,6 +36,7 @@ class PaginatedListView<T> extends StatelessWidget {
   final VoidCallback onRetry;
   final VoidCallback? onLoadMoreRetry;
   final PaginatedListLayout listLayout;
+  final ScrollController? controller;
   final Widget? header;
   final Widget? footer;
   final Widget? empty;
@@ -56,6 +58,7 @@ class PaginatedListView<T> extends StatelessWidget {
 
         if (header == null && footer == null) {
           return ListView.builder(
+            controller: controller,
             physics: physics,
             itemCount: itemCount,
             itemBuilder: _buildItem,
@@ -63,6 +66,7 @@ class PaginatedListView<T> extends StatelessWidget {
         }
 
         return CustomScrollView(
+          controller: controller,
           physics: physics,
           slivers: [
             if (header != null) SliverToBoxAdapter(child: header),

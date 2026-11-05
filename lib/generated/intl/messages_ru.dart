@@ -88,6 +88,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "charactersEmpty": MessageLookupByLibrary.simpleMessage(
       "Персонажи не найдены",
     ),
+    "charactersSearchClear": MessageLookupByLibrary.simpleMessage(
+      "Очистить поиск",
+    ),
+    "charactersSearchEmpty": MessageLookupByLibrary.simpleMessage(
+      "Ничего не найдено",
+    ),
+    "charactersSearchHint": MessageLookupByLibrary.simpleMessage(
+      "Поиск по имени",
+    ),
     "charactersTitle": MessageLookupByLibrary.simpleMessage("Персонажи"),
     "chatSendMessageFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось отправить сообщение",

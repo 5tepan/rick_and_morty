@@ -83,5 +83,8 @@
   "charactersEmpty": "Персонажи не найдены",
   "characterStatusAlive": "Жив",
   "characterStatusDead": "Мёртв",
-  "characterStatusUnknown": "Неизвестно"
+  "characterStatusUnknown": "Неизвестно",
+  "charactersSearchHint": "Поиск по имени",
+  "charactersSearchEmpty": "Ничего не найдено",
+  "charactersSearchClear": "Очистить поиск"
 }

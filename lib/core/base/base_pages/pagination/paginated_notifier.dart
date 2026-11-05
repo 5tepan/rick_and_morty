@@ -18,7 +18,10 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
   @override
   PaginatedState<T> build() {
     ref.onDispose(_executor.invalidate);
-    Future.microtask(loadInitial);
+    final generation = _executor.capture();
+    Future.microtask(() {
+      if (_executor.isCurrentGeneration(generation)) loadInitial();
+    });
     return PaginatedState<T>();
   }
 
@@ -29,6 +32,21 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
 
   Future<PaginatedPage<T>> loadPage(int page);
 
+  /// Отменяет применение предыдущих ответов перед сменой параметров списка.
+  void prepareForNewQuery() {
+    _executor.invalidate();
+    _requestInProgress = false;
+    _page = firstPage;
+    state = state.copyWith(
+      items: [],
+      isLoading: true,
+      isRefreshing: false,
+      isLoadingMore: false,
+      isAllLoaded: false,
+      clearError: true,
+    );
+  }
+
   Future<void> loadInitial() async {
     if (_requestInProgress) return;
 
@@ -36,6 +54,8 @@ abstract class PaginatedNotifier<T> extends Notifier<PaginatedState<T>> {
     _requestInProgress = true;
     state = state.copyWith(
       isLoading: true,
+      isRefreshing: false,
+      isLoadingMore: false,
       clearError: true,
       isAllLoaded: false,
       items: [],

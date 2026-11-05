@@ -84,6 +84,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "charactersEmpty": MessageLookupByLibrary.simpleMessage(
       "No characters found",
     ),
+    "charactersSearchClear": MessageLookupByLibrary.simpleMessage(
+      "Clear search",
+    ),
+    "charactersSearchEmpty": MessageLookupByLibrary.simpleMessage(
+      "No results found",
+    ),
+    "charactersSearchHint": MessageLookupByLibrary.simpleMessage(
+      "Search by name",
+    ),
     "charactersTitle": MessageLookupByLibrary.simpleMessage("Characters"),
     "chatSendMessageFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to send message",

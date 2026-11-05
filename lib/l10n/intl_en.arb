@@ -83,5 +83,8 @@
   "charactersEmpty": "No characters found",
   "characterStatusAlive": "Alive",
   "characterStatusDead": "Dead",
-  "characterStatusUnknown": "Unknown"
+  "characterStatusUnknown": "Unknown",
+  "charactersSearchHint": "Search by name",
+  "charactersSearchEmpty": "No results found",
+  "charactersSearchClear": "Clear search"
 }
