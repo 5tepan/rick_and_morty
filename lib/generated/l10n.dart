@@ -688,6 +688,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Персонаж`
+  String get characterDetailTitle {
+    return Intl.message(
+      'Персонаж',
+      name: 'characterDetailTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Статус`
+  String get characterDetailStatus {
+    return Intl.message(
+      'Статус',
+      name: 'characterDetailStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Вид`
+  String get characterDetailSpecies {
+    return Intl.message(
+      'Вид',
+      name: 'characterDetailSpecies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Происхождение`
+  String get characterDetailOrigin {
+    return Intl.message(
+      'Происхождение',
+      name: 'characterDetailOrigin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Текущая локация`
+  String get characterDetailLocation {
+    return Intl.message(
+      'Текущая локация',
+      name: 'characterDetailLocation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

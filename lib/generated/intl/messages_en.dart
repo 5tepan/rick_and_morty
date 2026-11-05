@@ -78,6 +78,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "authVerifyCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Failed to verify code",
     ),
+    "characterDetailLocation": MessageLookupByLibrary.simpleMessage(
+      "Current location",
+    ),
+    "characterDetailOrigin": MessageLookupByLibrary.simpleMessage("Origin"),
+    "characterDetailSpecies": MessageLookupByLibrary.simpleMessage("Species"),
+    "characterDetailStatus": MessageLookupByLibrary.simpleMessage("Status"),
+    "characterDetailTitle": MessageLookupByLibrary.simpleMessage("Character"),
     "characterStatusAlive": MessageLookupByLibrary.simpleMessage("Alive"),
     "characterStatusDead": MessageLookupByLibrary.simpleMessage("Dead"),
     "characterStatusUnknown": MessageLookupByLibrary.simpleMessage("Unknown"),

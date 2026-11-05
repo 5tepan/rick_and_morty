@@ -86,5 +86,10 @@
   "characterStatusUnknown": "Неизвестно",
   "charactersSearchHint": "Поиск по имени",
   "charactersSearchEmpty": "Ничего не найдено",
-  "charactersSearchClear": "Очистить поиск"
+  "charactersSearchClear": "Очистить поиск",
+  "characterDetailTitle": "Персонаж",
+  "characterDetailStatus": "Статус",
+  "characterDetailSpecies": "Вид",
+  "characterDetailOrigin": "Происхождение",
+  "characterDetailLocation": "Текущая локация"
 }

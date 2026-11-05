@@ -80,6 +80,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "authVerifyCodeFailed": MessageLookupByLibrary.simpleMessage(
       "Не удалось подтвердить код",
     ),
+    "characterDetailLocation": MessageLookupByLibrary.simpleMessage(
+      "Текущая локация",
+    ),
+    "characterDetailOrigin": MessageLookupByLibrary.simpleMessage(
+      "Происхождение",
+    ),
+    "characterDetailSpecies": MessageLookupByLibrary.simpleMessage("Вид"),
+    "characterDetailStatus": MessageLookupByLibrary.simpleMessage("Статус"),
+    "characterDetailTitle": MessageLookupByLibrary.simpleMessage("Персонаж"),
     "characterStatusAlive": MessageLookupByLibrary.simpleMessage("Жив"),
     "characterStatusDead": MessageLookupByLibrary.simpleMessage("Мёртв"),
     "characterStatusUnknown": MessageLookupByLibrary.simpleMessage(
