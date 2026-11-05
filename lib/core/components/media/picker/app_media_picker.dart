@@ -37,7 +37,7 @@ abstract final class AppMediaPicker {
         AppMediaPickerSource.gallery => ImageSource.gallery,
       };
 
-      return switch (contentMode) {
+      return await switch (contentMode) {
         MediaFeedContentMode.photosOnly => _pickPhoto(
           context: context,
           source: imageSource,

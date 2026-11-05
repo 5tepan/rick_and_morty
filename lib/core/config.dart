@@ -23,22 +23,9 @@ class Config {
   final int? imagePickerImageQuality;
 
   final bool showDebugBanner;
-  final bool enableFirebase;
 
-  /// Единый флаг REST Fake API: `*ApiImpl` ходят через HTTP,
-  /// а [FakeApiClient] отдаёт JSON из `assets/fake_api/`.
-  final bool useFakeApi;
-
-  final bool enableWebSocket;
-  final bool useMockWebSocket;
-  final String? webSocketHost;
-  final int? webSocketPort;
-  final String webSocketAuthRelativePath;
   final AppLocaleMode localeMode;
   final Flavor flavor;
-
-  /// API-ключ Yandex MapKit (init SDK). Пустой — карта не инициализируется.
-  final String mapKitApiKey;
 
   const Config({
     required this.apiUrlDomain,
@@ -48,29 +35,18 @@ class Config {
     this.imagePickerMaxImageSize = 1536.0,
     this.imagePickerImageQuality = 95,
     this.showDebugBanner = true,
-    this.enableFirebase = false,
-    this.useFakeApi = true,
-    this.enableWebSocket = true,
-    this.useMockWebSocket = true,
-    this.webSocketHost,
-    this.webSocketPort,
-    this.webSocketAuthRelativePath = '/api/broadcasting/auth',
     this.localeMode = AppLocaleMode.russianAndEnglish,
-    this.mapKitApiKey = '',
   });
 
   /// Локали, доступные в приложении.
   List<Locale> get supportedLocales => switch (localeMode) {
-        AppLocaleMode.russianOnly => const [Locale('ru')],
-        AppLocaleMode.russianAndEnglish => const [
-            Locale('ru'),
-            Locale('en'),
-          ],
-      };
+    AppLocaleMode.russianOnly => const [Locale('ru')],
+    AppLocaleMode.russianAndEnglish => const [Locale('ru'), Locale('en')],
+  };
 
   /// Принудительная локаль. `null` — выбор по языку системы.
   Locale? get forcedLocale => switch (localeMode) {
-        AppLocaleMode.russianOnly => const Locale('ru'),
-        AppLocaleMode.russianAndEnglish => null,
-      };
+    AppLocaleMode.russianOnly => const Locale('ru'),
+    AppLocaleMode.russianAndEnglish => null,
+  };
 }

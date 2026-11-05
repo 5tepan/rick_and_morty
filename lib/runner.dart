@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:base_flutter_proj/core/app_bootstrap.dart';
 import 'package:base_flutter_proj/core/application.dart';
-import 'package:base_flutter_proj/core/components/map/app_map_bootstrap.dart';
 import 'package:base_flutter_proj/core/config.dart';
-import 'package:base_flutter_proj/core/model/entities/app_settings.dart';
 import 'package:base_flutter_proj/core/providers/core_providers.dart';
 import 'package:base_flutter_proj/core/theme/theme_builder.dart';
 import 'package:flutter/services.dart';
@@ -19,29 +17,20 @@ Future<void> run(Config env) async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   final packageInfo = await PackageInfo.fromPlatform();
 
-  final appSettings = await AppBootstrap.initialize(
-    config: env,
-    packageInfo: packageInfo,
-  );
-  await AppMapBootstrap.initialize(apiKey: env.mapKitApiKey);
+  await AppBootstrap.initialize();
   await _prepareSystemChrome();
-  _runApp(env, packageInfo, appSettings);
+  _runApp(env, packageInfo);
   widgetsBinding.addPostFrameCallback((_) {
     FlutterNativeSplash.remove();
   });
 }
 
-void _runApp(
-  Config config,
-  PackageInfo packageInfo,
-  AppSettings appSettings,
-) {
+void _runApp(Config config, PackageInfo packageInfo) {
   runApp(
     ProviderScope(
       overrides: [
         configProvider.overrideWithValue(config),
         packageInfoProvider.overrideWithValue(packageInfo),
-        appSettingsProvider.overrideWithValue(appSettings),
       ],
       child: const Application(),
     ),

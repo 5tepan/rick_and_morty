@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:base_flutter_proj/core/debug/logger.dart';
 import 'package:base_flutter_proj/core/events/app_event.dart';
 import 'package:base_flutter_proj/core/providers/app_event_provider.dart';
 import 'package:base_flutter_proj/core/providers/core_providers.dart';
-import 'package:base_flutter_proj/core/push/badge/notification_badge_cleaner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -43,9 +40,6 @@ class _AppLifecycleBridgeState extends ConsumerState<AppLifecycleBridge>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      unawaited(NotificationBadgeCleaner.clearOnAppOpen());
-    });
   }
 
   @override
@@ -63,7 +57,6 @@ class _AppLifecycleBridgeState extends ConsumerState<AppLifecycleBridge>
         notifier.emit(const AppLifecyclePaused());
       case AppLifecycleState.resumed:
         notifier.emit(const AppLifecycleResumed());
-        unawaited(NotificationBadgeCleaner.clearOnAppOpen());
       case AppLifecycleState.inactive:
       case AppLifecycleState.detached:
         break;

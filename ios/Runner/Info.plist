@@ -39,14 +39,6 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
-		<key>NSCameraUsageDescription</key>
-		<string>Приложению нужен доступ к камере для съёмки фото и видео.</string>
-		<key>NSMicrophoneUsageDescription</key>
-		<string>Приложению нужен доступ к микрофону для записи видео.</string>
-		<key>NSPhotoLibraryUsageDescription</key>
-		<string>Приложению нужен доступ к галерее для выбора фото и видео.</string>
-		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>Приложению нужна геолокация, чтобы показать ваше положение на карте.</string>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
 		<key>UIApplicationSupportsIndirectInputEvents</key>
